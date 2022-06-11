@@ -19,12 +19,11 @@ const showContact = () => {
         setTelegram("");
         setDiscord("");
         setDesc("");
-        setIsLoading(true);
         if (!address) {
             setErrorMessage("Чтобы просмотреть контакт, надо ввести его адрес")
             return;
         }
-
+        setIsLoading(true);
         try {
             const contact = await getContactByAddress(address);
             setTelegram(contact.telegram);
